@@ -1,3 +1,8 @@
 name = "upload-app"
 main = "src/index.ts"
 compatibility_date = "2022-10-10"
+
+[[r2_buckets]]
+binding = "images"
+bucket_name = "image-upload"
+preview_bucket_name = "image-upload-preview"
