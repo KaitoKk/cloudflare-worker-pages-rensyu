@@ -2,6 +2,6 @@ name = "article-app"
 main = "src/index.ts"
 compatibility_date = "2022-10-07"
 
-kv_namespace = [
+kv_namespaces = [
     { binding = "article", id = "7380524b75e24152b44389660faf7009", preview_id = "92b24d1ba1784371adf384ccaf714ffb" }
 ]
