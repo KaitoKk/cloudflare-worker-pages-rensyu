@@ -49,7 +49,7 @@ import { Post as PostType } from "@/types/Post"
 export default {
   name: "PostView",
   props: {
-    id: string
+    id: String
   },
   data: () => {
     return {

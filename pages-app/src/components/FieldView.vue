@@ -20,7 +20,7 @@
     </b-col>
   </b-row>
 
-  <b-row v-for="image in images" key="image.idx">
+  <b-row v-for="image in images" :key="image.idx">
     <b-col sm="1"></b-col>
     <b-col sm="3"><img :src="image.url" style="max-width: 200px; max-height: 200px; object-fit: cover;"/></b-col>
     <b-col><b-button @click="removeImage(image.idx)"><b-icon-trash></b-icon-trash></b-button></b-col>
@@ -39,11 +39,10 @@
     </b-col>
     <b-col sm="1">
       <b-button @click="changeLocState" :disabled="locationState.disabled">
-        <b-icon-geo v-if="allowState.loc" :animation="locationState.animate">
-          <b-iconstack v-else>
-            <b-icon-geo stacked></b-icon-geo><b-icon-slash-circle stacked scale="1.5"></b-icon-slash-circle>
-          </b-iconstack>
-        </b-icon-geo>
+        <b-icon-geo v-if="allowState.loc" :animation="locationState.animate"></b-icon-geo>
+        <b-iconstack v-else>
+          <b-icon-geo stacked></b-icon-geo><b-icon-slash-circle stacked scale="1.5"></b-icon-slash-circle>
+        </b-iconstack>
       </b-button>
     </b-col>
   </b-row>
