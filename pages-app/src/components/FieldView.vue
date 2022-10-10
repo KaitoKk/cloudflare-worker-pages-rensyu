@@ -1,4 +1,4 @@
-<tenolate>
+<template>
 <b-container>
   <b-row>
     <b-col sm="1"><b-icon-file-text></b-icon-file-text></b-col>
@@ -49,7 +49,7 @@
   </b-row>
   <hr />
 </b-container>
-</tenolate>
+</template>
 
 <script lang="ts">
 import axios from "axios"
