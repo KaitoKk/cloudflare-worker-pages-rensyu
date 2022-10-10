@@ -4,11 +4,11 @@ module.exports = defineConfig({
 	transpileDependencies: true,
 	css: {
 		loaderOptions: {
-			scss: {
-				additionalData: [...bootstrapSassAbstractsImports, ''].join(';\n')
-			},
 			sass: {
 				additionalData: bootstrapSassAbstractsImports.join('\n')
+			},
+			scss: {
+				additionalData: [...bootstrapSassAbstractsImports, ''].join(';\n')
 			}
 		}
 	}
