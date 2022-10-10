@@ -1,30 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<div id="app">
+  <FieldView></FieldView>
+  <PostView v-for="key in posts" :key="key" :id="key"></PostView>
+</div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Vue from 'vue'
 
-@Component({
+import PostView from "@/components/PostView.vue"
+import FieldView from "@/components/FieldView.vue"
+
+export default Vue.extend({
+  name: 'App',
   components: {
-    HelloWorld,
+    PostView,
+    FieldView,
   },
+  data() {
+    return {
+      posts: [] as string[]
+    }
+  }
 })
-export default class App extends Vue {}
 </script>
 
-<style lang="scss">
-@import "~@/assets/scss/vendors/bootstrap-vue/index";
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style>
+.row {
+  margin: 0.75em;
 }
 </style>
