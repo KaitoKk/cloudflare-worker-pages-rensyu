@@ -94,7 +94,7 @@ export default {
         idx++
       }
     },
-    getPosition() {
+    getPosition: function () {
       this.locationState.animate = 'fade'
       navigator.geolocation.getCurrentPosition((pos) => {
         this.lat = pos.coords.latitude
@@ -103,7 +103,6 @@ export default {
         this.locationState.animate = ''
         this.getLocation()
       }, function (err) {
-        this.locationState.disabled = true
         console.log(err)
       }, {
         enableHighAccuracy: true
@@ -137,7 +136,7 @@ export default {
         lat: this.lat,
         lon: this.lon,
         location: this.location,
-        images: this.image_urls
+        images: image_urls
       } as ParamType
 
       const result = await axios.post(`${process.env.VUE_APP_ARTICLE_API}/posts`, postData)
