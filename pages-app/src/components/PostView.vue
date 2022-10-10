@@ -41,10 +41,10 @@
 </b-container>
 </template>
 
-<script>
+<script lang="ts">
 import axios from "axios"
 import { DateTime } from "luxon"
-import { Post as PostType } from "../types/Post"
+import { Post as PostType } from "@/types/Post"
 
 export default {
   name: "PostView",
