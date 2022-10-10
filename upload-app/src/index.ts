@@ -42,7 +42,7 @@ import { etag } from 'hono/etag'
 const app = new Hono<{ Bindings: Env }>()
 app.use('*', cors(), etag())
 
-app.post('/upload', async (context) => {
+app.post('/images/upload', async (context) => {
 	const formData = await context.req.formData()
 	const file = formData.get("image") as File
 
@@ -54,7 +54,7 @@ app.post('/upload', async (context) => {
 	return context.json({ message: 'ok', id }, 200)
 })
 
-app.get('/:id', async (context) => {
+app.get('/images/:id', async (context) => {
 	const id = context.req.param('id')
 	const body = await context.env.images.get(id)
 
@@ -63,7 +63,7 @@ app.get('/:id', async (context) => {
 	return context.body(body.body, 200)
 })
 
-app.delete('/:id', async (context) => {
+app.delete('/images/:id', async (context) => {
 	const id = context.req.param('id')
 	const body = await context.env.images.get(id)
 
